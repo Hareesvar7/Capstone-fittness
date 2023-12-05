@@ -18,21 +18,7 @@ Project is created with:
 - Node.js
 - JWT Authentication
 
-## Installation
 
-To run this project, install it locally using npm:
-
-```
-npm install
-```
-
-## Usage
-
-After installing npm packages, the application will be invoked by using the following command:
-
-```
-npm run develop
-```
 
 
 
