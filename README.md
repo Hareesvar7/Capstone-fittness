@@ -19,31 +19,6 @@ Project is created with:
 - Node.js
 - JWT Authentication
 
-variable "environment" {
-  description = "The environment in which to deploy resources."
-  type        = string
-  default     = "dev"
-}
-
-resource "aws_s3_bucket" "example" {
-  count = var.environment == "dev" ? 1 : 0
-
-  bucket = "my-example-bucket-${count.index}"
-  acl    = "private"
-
-  tags = {
-    Name        = "my-example-bucket"
-    Environment = var.environment
-  }
-}
-
-
-terraform apply -var="environment=dev"
-
-
-The count argument is used to conditionally create the S3 bucket. If var.environment is "dev", count will be 1, and the bucket will be created. Otherwise, count will be 0, and no bucket will be created.
-count.index allows you to differentiate resources if you have multiple resources of the same type.
-
 
 
 
